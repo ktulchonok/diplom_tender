@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div class="top-menu">
+    <%= link_to image_tag('logo_on_transparent_372x75.png'), '/tenders' %>
+    <ul class="lang">
+      <li><a href="#">RU</a></li>
+      <li><a href="#">UA</a></li>
+      <li><a href="#">EN</a></li>
+    </ul>
+  </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--<a class="navbar-brand" href="#">Tender</a>-->
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <% if current_user %>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="tenders">Все тендеры</a></li>
+          <li><a href="#">Мои тендеры</a></li>
+          <li><a href="#">Мои предложения</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if current_user && current_user.admin? %>
+                <li><a href="admin">Админ панель</a></li>
+              <% end %>
+              <li><a href="#">Личный кабинет</a></li>
+              <li><a href="#">Настройки</a></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to 'Выйти', logout_path, method: 'delete' %></li>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Войти', 'login' %></li>
+          <li><%= link_to 'Зарегистрироваться', 'signup' %></li>
+        </ul>
+      <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
+<%= yield %>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 sitemap">
+        <h3>Карта сайта</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to 'Главная', '/' %>
+            <%= link_to 'Новости', '/posts' %>
+            <%= link_to 'Тендеры', '/tenders' %>
+          </div>
+          <div class="col-md-6">
+            <a href="/partners/">О нас</a>
+            <a href="/customers/">Поддержка</a>
+            <a href="/contact/">Контакты</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 social">
+        <h3>Социальные сети</h3>
+        <a href="//twitter.com/" class="social-icon twitter"></a>
+        <a href="//facebook.com/" class="social-icon facebook"></a>
+        <a href="//plus.google.com/" class="social-icon vk"></a><br>
+        <a href="//github.com/" class="social-icon github"></a>
+        <a href="//bitbucket.org/" class="social-icon bitbucket"></a>
+        <a href="//plus.google.com/" class="social-icon google-plus"></a>
+      </div>
+      <div class="col-md-4 footer-logo">
+        <%= link_to image_tag('logo_on_transparent_372x75.png', size: '350x50'), '/' %>
+        <p>
+          Copyright © 2016 Tender.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

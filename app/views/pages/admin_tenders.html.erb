@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="admin_tenders">Tenders</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Users</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="admin_categories">Categories</a></li>
+        <li><a href="admin_areas">Areas</a></li>
+        <li><a href="">Tags</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Admin panel</h1>
+      <form name="search" action="/admin_tenders" method="get" class="form-inline form-search pull-right">
+        <div class="input-group">
+          <label class="sr-only" for="searchInput">Search</label>
+          <input class="form-control" id="searchInput" type="text" name="tenders_like" placeholder="Search" value="<%= params[:tenders_like] %>">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Искать</button>
+          </div>
+        </div>
+      </form>
+      <h2 class="sub-header">Tenders</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Purchase subject</th>
+            <th>Category</th>
+            <th>Area and address</th>
+            <th>Date of publication</th>
+            <th>Deadline date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @tenders.each do |t| %>
+              <tr>
+                <td><%= t.id %></td>
+                <td><%= link_to t.title, tender_path(t) %></td>
+                <td width="90px"><%= link_to t.category.name_en, tenders_path(category: t.category) %></td>
+                <td width="250px">
+                  <%= link_to t.area.name_en, tenders_path(area: t.area) %><br>
+                  <%= t.address %>
+                </td>
+                <td width="100px"><%= t.deadline.strftime("%d.%m.%Y") %></td>
+                <td width="100px"><%= t.created_at.strftime("%d.%m.%Y") %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

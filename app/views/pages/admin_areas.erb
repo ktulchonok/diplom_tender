@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li><a href="admin_tenders">Tenders</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Users</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="admin_categories">Categories</a></li>
+        <li class="active"><a href="admin_areas">Areas</a></li>
+        <li><a href="">Tags</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Admin panel</h1>
+      <h2 class="sub-header">Categories</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>name_en</th>
+            <th>name_ru</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+            <th>action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @areas.each do |t| %>
+              <tr>
+                <td><%= t.id %></td>
+                <td><%= t.name_en %></td>
+                <td><%= t.name_ru %></td>
+                <td width="100px"><%= t.created_at.strftime("%d.%m.%Y") %></td>
+                <td width="100px"><%= t.updated_at.strftime("%d.%m.%Y") %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

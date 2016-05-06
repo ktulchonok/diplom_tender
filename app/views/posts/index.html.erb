@@ -1,0 +1,13 @@
+<% @title = 'News' %>
+
+<div class="news container">
+  <% @posts.each do |p| %>
+      <ul class="post">
+        <li><h3><%= p.title_en %></h3></li>
+        <li><%= image_tag(p.preview, size: '360x240') %></li>
+        <li><p><%= p.text_en %></p></li>
+        <li><a href="#">Подробнее</a></li>
+      </ul>
+      <hr>
+  <% end %>
+</div>

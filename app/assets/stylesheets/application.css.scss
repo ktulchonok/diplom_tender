@@ -1,0 +1,246 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+html {
+  position: relative;
+  min-height: 100%;
+
+  body {
+
+    margin-bottom: 200px;
+
+    header {
+
+      .top-menu {
+        background: #b81414;
+        height: 75px;
+        width: 100%;
+        display: inline-block;
+
+        .lang {
+          text-align: right;
+          margin: -50px 50px 0 0;
+
+          li {
+            font: 1.5em serif;
+            display: inline;
+            list-style: none;
+          }
+
+          a { color: #292929 }
+          a:hover { color: #292929 }
+        }
+      }
+    }
+
+    .jumbotron {
+      padding-top: 100px;
+      min-height: 500px;
+      text-align: center;
+      margin-top: -20px;
+      position: relative;
+      overflow: hidden;
+      background-color: #000000;
+
+      h1, p, a {
+        font-family: "Palatino Linotype", helvetica, verdana, arial, sans-serif;
+        color: #ffffff;
+        position: relative;
+        z-index: 2;
+      }
+
+      a:first-child { margin-top: 100px }
+
+      img {
+        position: absolute;
+        left: 0;
+        top: -400px;
+        width: 100%;
+        height: auto;
+        opacity: 0.4;
+      }
+    }
+
+    .b-home-list {
+      text-align: center;
+      margin: 50px 0;
+      span {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 120px;
+      }
+    }
+
+    .b-home-body {
+      margin: 50px 0;
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        width:  300px;
+        height: 350px;
+      }
+    }
+
+    .cat { display: inline-block }
+
+    .post {
+      list-style: none;
+      padding: 0;
+    }
+
+    #searchInput { width: 550px }
+
+
+    .news {
+
+      hr {
+        height: 1px;
+        background-color: #4c0808;
+      }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 140px;
+      background: #292929;
+      color: #dbdbdb;
+      font-size: 11px;
+      padding-left: 25px;
+
+      .container {
+        height: 140px;
+        padding: 10px 0;
+        a {
+          color: #dbdbdb;
+        }
+
+        .sitemap a {
+          display: block;
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+
+        .social {
+
+          .social-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin: 0 20px 5px 0;
+          }
+
+          .twitter {
+            background: url("twitter-3.png") no-repeat;
+            background-size: cover;
+          }
+          .facebook { background: url("facebook.png") no-repeat;
+            background-size: cover;
+          }
+          .vk { background: url("rus-vk-02.png") no-repeat;
+            background-size: cover;
+          }
+          .github { background: url("github-01.png") no-repeat;
+            background-size: cover;
+          }
+          .bitbucket { background: url("vc-bitbucket-01.png") no-repeat;
+            background-size: cover;
+          }
+          .google-plus { background: url("google__x2B_.png") no-repeat;
+            background-size: cover;
+          }
+        }
+
+        .footer-logo {
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+
+  .sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+
+  /*
+   * Sidebar
+   */
+
+  /* Hide for mobile, show later */
+  .sidebar {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 75px;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      display: block;
+      padding: 20px;
+      overflow-x: hidden;
+      overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+      background-color: #f5f5f5;
+      border-right: 1px solid #eee;
+    }
+  }
+
+  /* Sidebar navigation */
+  .nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+  }
+  .nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #b81414;
+  }
+
+
+  /*
+   * Main content
+   */
+
+  .main {
+    padding: 20px;
+  }
+  @media (min-width: 768px) {
+    .main {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+  .main .page-header {
+    margin-top: 0;
+  }
+
+
+  /*
+   * Placeholder dashboard ideas
+   */
+
+  .placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .placeholders h4 {
+    margin-bottom: 0;
+  }
+  .placeholder {
+    margin-bottom: 20px;
+  }
+  .placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+

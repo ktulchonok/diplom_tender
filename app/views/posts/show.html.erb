@@ -2,10 +2,16 @@
    @heading = @post.title_en %>
 
 <div class="container">
-  <h3><%= @post.title_en %></h3>
-  <p><%= @post.text_en %></p>
-  <p>by <%= link_to @post.user.email, user_path(@post.user) %></p>
-  <p><%= @post.created_at %></p>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-  <%= link_to 'Delete', @post, method: 'delete' %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3><%= @post.title_en %></h3>
+      <p><%= @post.text_en %></p>
+      <!--<p>by <%= link_to @post.user.email, user_path(@post.user) %></p>-->
+      <p>by <%= link_to @post.user.email, '#' %></p>
+      <p><%= @post.created_at %></p>
+    </div>
+    <div class="col-md-3 ">
+      <%= image_tag @post.preview, size: '360x240', style: 'margin-top:20px' %>
+    </div>
+  </div>
 </div>

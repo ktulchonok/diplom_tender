@@ -2,7 +2,30 @@
    @heading = @tender.title %>
 
 <div class="container">
-  <p><%= @tender.content %></p>
-  <p><%= @tender.address %></p>
+  <h3><%= @tender.title %></h3>
+  <p><span style="font-size: 1.1em; font-weight: bold">Заказчик: </span><%= @tender.user.first_name %> <%= @tender.user.last_name %></p>
+  <p><span style="font-size: 1.1em; font-weight: bold">Описание </span><%= @tender.content %></p>
+  <p><span style="font-size: 1.1em; font-weight: bold">Сумма закупки </span><%= @tender.amount %><%= @tender.currency %></p>
+  <p><span style="font-size: 1.1em; font-weight: bold">Адрес: </span><%= @tender.address %></p>
+  <p><span style="font-size: 1.1em; font-weight: bold">Категория: </span><%= @tender.category.name_ru %></p>
+  <p><span style="font-size: 1.1em; font-weight: bold">Регион: </span><%= @tender.area.name_ru %></p>
+
   <p class="timestampes"><%= @tender.created_at %></p>
+  <% @tender.answers.each do |answer| %>
+  <div class="bs-callout bs-callout-info col-md-12">
+    <h4><%= answer.user.first_name + ' ' + answer.user.last_name %></h4>
+    <p><%= answer.content %></p>
+  </div>
+  <% end %>
+  <div class="form">
+    <%= form_for [@tender, @tender.answers.build] do |f| %>
+        <div class="form-group">
+          <%= f.label :content, 'Ответ:' %>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+        <div class="action">
+          <%= f.submit 'Ответить', class: 'btn btn-default' %>
+        </div>
+    <% end %>
+  </div>
 </div>

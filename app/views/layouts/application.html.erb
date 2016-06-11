@@ -9,11 +9,11 @@
 <body>
 <header>
   <div class="top-menu">
-    <%= link_to image_tag('logo_on_transparent_372x75.png'), '/tenders' %>
+    <%= link_to image_tag('logo_on_transparent_372x75.png'), '../' %>
     <ul class="lang">
-      <li><a href="#">RU</a></li>
-      <li><a href="#">UA</a></li>
-      <li><a href="#">EN</a></li>
+      <!--<li><a href="#">RU</a></li>-->
+      <!--<li><a href="#">UA</a></li>-->
+      <!--<li><a href="#">EN</a></li>-->
     </ul>
   </div>
   <nav class="navbar navbar-default" role="navigation">
@@ -31,9 +31,9 @@
       <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <% if current_user %>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="tenders">Все тендеры</a></li>
-          <li><a href="#">Мои тендеры</a></li>
-          <li><a href="#">Мои предложения</a></li>
+          <li class="active"><a href="../tenders">Все тендеры</a></li>
+          <!--<li><a href="#">Мои тендеры</a></li>-->
+          <!--<li><a href="#">Мои предложения</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -42,8 +42,8 @@
               <% if current_user && current_user.admin? %>
                 <li><a href="admin">Админ панель</a></li>
               <% end %>
-              <li><a href="#">Личный кабинет</a></li>
-              <li><a href="#">Настройки</a></li>
+              <!--<li><a href="#">Личный кабинет</a></li>-->
+              <!--<li><a href="#">Настройки</a></li>-->
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Выйти', logout_path, method: 'delete' %></li>
             </ul>

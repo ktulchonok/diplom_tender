@@ -2,8 +2,12 @@
   <div class="container">
     <h1>Тендер онлайн</h1>
     <p>лучший выбор для тех, кто хочет преуспеть в бизенесе</p>
-    <p><%= link_to 'Присоедениться', 'login',  class: 'btn btn-primary btn-lg' %></p>
+    <% unless current_user %>
+    <p><%= link_to 'Присоедениться', 'signup',  class: 'btn btn-primary btn-lg' %></p>
     <p><%= link_to 'или войти', 'login' %></p>
+    <% else %>
+        <p><%= link_to 'Просмотреть текущие тендеры', 'tenders',  class: 'btn btn-primary btn-lg' %></p>
+    <% end %>
     <%= image_tag 'Biznes-sdelka.jpg' %>
   </div>
 </div>

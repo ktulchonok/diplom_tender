@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (6.1.2)
       execjs
       json
+    bcrypt (3.1.10)
     bcrypt (3.1.10-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -78,7 +79,10 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
+    mysql2 (0.4.2)
     mysql2 (0.4.2-x64-mingw32)
+    nokogiri (1.6.7.1)
+      mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.1-x64-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
     rack (1.6.4)
@@ -147,6 +151,7 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -166,4 +171,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

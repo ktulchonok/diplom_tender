@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 html {
   position: relative;
   min-height: 100%;
@@ -7,6 +8,28 @@ html {
   body {
 
     margin-bottom: 200px;
+
+    .bs-callout {
+      margin: 20px 0;
+      padding: 20px;
+      border-left: 3px solid #eee
+    }
+    .bs-callout h4 {
+      margin-top: 0;
+      margin-bottom: 5px
+    }
+    .bs-callout p:last-child {
+      margin-bottom: 0
+    }
+
+    .bs-callout-info {
+      background-color: #f4f8fa;
+      border-color: #b81414
+    }
+
+    .bs-callout-info h4 {
+      color: #b81414
+    }
 
     header {
 
@@ -26,8 +49,12 @@ html {
             list-style: none;
           }
 
-          a { color: #292929 }
-          a:hover { color: #292929 }
+          a {
+            color: #292929
+          }
+          a:hover {
+            color: #292929
+          }
         }
       }
     }
@@ -48,7 +75,9 @@ html {
         z-index: 2;
       }
 
-      a:first-child { margin-top: 100px }
+      a:first-child {
+        margin-top: 100px
+      }
 
       img {
         position: absolute;
@@ -77,20 +106,23 @@ html {
       img {
         position: absolute;
         object-fit: cover;
-        width:  300px;
+        width: 300px;
         height: 350px;
       }
     }
 
-    .cat { display: inline-block }
+    .cat {
+      display: inline-block
+    }
 
     .post {
       list-style: none;
       padding: 0;
     }
 
-    #searchInput { width: 550px }
-
+    #searchInput {
+      width: 550px
+    }
 
     .news {
 
@@ -103,7 +135,7 @@ html {
     footer {
       position: absolute;
       bottom: 0;
-      width: 100%;
+      min-width: 100%;
       height: 140px;
       background: #292929;
       color: #dbdbdb;
@@ -136,19 +168,24 @@ html {
             background: url("twitter-3.png") no-repeat;
             background-size: cover;
           }
-          .facebook { background: url("facebook.png") no-repeat;
+          .facebook {
+            background: url("facebook.png") no-repeat;
             background-size: cover;
           }
-          .vk { background: url("rus-vk-02.png") no-repeat;
+          .vk {
+            background: url("rus-vk-02.png") no-repeat;
             background-size: cover;
           }
-          .github { background: url("github-01.png") no-repeat;
+          .github {
+            background: url("github-01.png") no-repeat;
             background-size: cover;
           }
-          .bitbucket { background: url("vc-bitbucket-01.png") no-repeat;
+          .bitbucket {
+            background: url("vc-bitbucket-01.png") no-repeat;
             background-size: cover;
           }
-          .google-plus { background: url("google__x2B_.png") no-repeat;
+          .google-plus {
+            background: url("google__x2B_.png") no-repeat;
             background-size: cover;
           }
         }
@@ -165,7 +202,6 @@ html {
     border-bottom: 1px solid #eee;
   }
 
-
   /*
    * Sidebar
    */
@@ -177,8 +213,7 @@ html {
   @media (min-width: 768px) {
     .sidebar {
       position: fixed;
-      top: 75px;
-      bottom: 0;
+      top: 128px;
       left: 0;
       z-index: 1000;
       display: block;
@@ -205,7 +240,6 @@ html {
     background-color: #b81414;
   }
 
-
   /*
    * Main content
    */
@@ -222,7 +256,6 @@ html {
   .main .page-header {
     margin-top: 0;
   }
-
 
   /*
    * Placeholder dashboard ideas

@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
+  get 'areas/edit'
+
+  get 'areas/update'
+
+  get 'categories/edit'
+
   root 'pages#home'
-  resources :users, :posts, :tenders
+  resources :users, :posts, :categories, :areas
+  resources :tenders do
+    resources :answers
+    member do
+      get :update_status
+    end
+  end
+
+  resources :admin, only: :index do
+
+  end
 
   get 'signup'  => 'users#new'
   get 'login' => 'sessions#new'
